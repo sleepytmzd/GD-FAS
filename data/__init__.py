@@ -13,6 +13,7 @@ def protocol_decoder(protocol):
         's':'Surf',
         'c':'CeFA',
         'w':'WMCA',
+        'L':'LCC_FASD',  # Custom dataset
     }
 
     train_protocols, test_protocols = protocol.split('_to_')
