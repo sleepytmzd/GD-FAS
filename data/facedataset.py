@@ -37,7 +37,7 @@ class FaceDataset(Dataset):
     def __getitem__(self, idx):
         video_name = self.video_list[idx]
         spoofing_label = int('live' in video_name)
-        domain_label = self.data_names[video_name.split('/')[3]]
+        domain_label = self.data_names[video_name.split('/')[4]]
         image_x = self.sample_image(video_name)
         image_x = self.transform(image_x)
 
@@ -102,7 +102,7 @@ class BalanceFaceDataset(Dataset):
                 video_name = next(self.video_list[video_key])
 
             spoofing_label = int('live' in video_name)
-            domain_label = self.data_names[video_name.split('/')[3]]
+            domain_label = self.data_names[video_name.split('/')[4]]
 
             image_x = self.sample_image(video_name)
             image_x_view1 = self.transform(image_x)
